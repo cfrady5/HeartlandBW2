@@ -2,112 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-  <title>Rapid Acquisition Model (RAM)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heartland BioWorks — Indiana's Regional Tech Hub for Biomanufacturing</title>
 
   <style>
     :root {
-      --bg: #05070c;
-      --bg-2: #090d15;
-      --bg-3: #0e1421;
-      --panel: rgba(14, 20, 33, 0.82);
-      --panel-2: rgba(255, 255, 255, 0.03);
-      --panel-3: rgba(255, 255, 255, 0.05);
-      --line: rgba(255, 255, 255, 0.12);
-      --line-strong: rgba(255, 255, 255, 0.22);
-      --text: #f5f7fb;
-      --text-2: rgba(245, 247, 251, 0.78);
-      --text-3: rgba(245, 247, 251, 0.55);
-      --text-4: rgba(245, 247, 251, 0.34);
-      --accent: #6f7fa8;
-      --accent-2: #495879;
-      --accent-3: rgba(111, 127, 168, 0.12);
-      --glow: rgba(111, 127, 168, 0.28);
-      --success: #1bb34a;
-      --container: 1280px;
-      --radius: 24px;
+      --ink: #07130d;
+      --ink-2: #0b1b13;
+      --ink-3: #102619;
+      --paper: #f7f8f6;
+      --paper-2: #eef1ec;
+      --line-dark: rgba(255, 255, 255, 0.12);
+      --line-light: rgba(7, 19, 13, 0.12);
+      --text-on-dark: #f2f7f3;
+      --text-on-dark-2: rgba(242, 247, 243, 0.74);
+      --text-on-dark-3: rgba(242, 247, 243, 0.52);
+      --text-on-light: #122019;
+      --text-on-light-2: rgba(18, 32, 25, 0.74);
+      --green: #18a957;
+      --green-bright: #3ddc78;
+      --green-deep: #0d7a3d;
+      --glow: rgba(61, 220, 120, 0.32);
+      --container: 1240px;
+      --radius: 22px;
       --radius-sm: 14px;
-      --shadow: 0 24px 90px rgba(0, 0, 0, 0.42);
-      --shadow-soft: 0 16px 50px rgba(0, 0, 0, 0.24);
-      --ease: 220ms cubic-bezier(0.2, 0, 0, 1);
+      --shadow: 0 22px 70px rgba(4, 12, 8, 0.38);
+      --shadow-soft: 0 14px 40px rgba(4, 12, 8, 0.16);
+      --ease: 240ms cubic-bezier(0.2, 0, 0, 1);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       margin: 0;
       padding: 0;
       scroll-behavior: smooth;
-      background: var(--bg);
+      background: var(--ink);
     }
 
     body {
       margin: 0;
       padding: 0;
-      color: var(--text);
-      font-family:
-        Inter,
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        system-ui,
-        sans-serif;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(111, 127, 168, 0.11), transparent 26%),
-        radial-gradient(circle at 85% 35%, rgba(111, 127, 168, 0.09), transparent 24%),
-        linear-gradient(180deg, #05070c 0%, #080c14 50%, #05070c 100%);
+      color: var(--text-on-dark);
+      font-family: Inter, "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+      background: var(--ink);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       text-rendering: geometricPrecision;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -3;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 88%);
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(2.9rem, 5.6vw, 5.2rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      font-weight: 800;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-      background:
-        linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.015) 45%, transparent 70%);
+    h2 {
+      font-size: clamp(2rem, 3.8vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      font-weight: 760;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    h3 {
+      font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    iframe {
-      display: block;
-      width: 100%;
-      border: 0;
-    }
-
-    .shell {
-      position: relative;
-      overflow: hidden;
+    p {
+      font-size: 1.02rem;
+      line-height: 1.7;
     }
 
     .container {
@@ -118,92 +90,199 @@
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      color: var(--text-3);
-      font-size: 0.77rem;
+      gap: 10px;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
     .eyebrow::before {
       content: "";
-      width: 14px;
-      height: 14px;
-      border: 1px solid var(--line-strong);
-      display: inline-block;
-      position: relative;
-      box-shadow: inset 0 0 0 3px transparent;
-    }
-
-    .eyebrow::after {
-      content: "";
-      width: 72px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--line-strong), transparent);
+      width: 28px;
+      height: 2px;
+      background: var(--green);
       display: inline-block;
     }
 
-    h1,
-    h2,
-    h3,
-    p {
-      margin: 0;
+    /*
+     * Vertical rhythm is intentionally tight (issue #5): 72–88px per
+     * section instead of 120–150px, with hairline dividers so sections
+     * read as one continuous page.
+     */
+    .section { position: relative; padding: 84px 0; }
+    .section-tight { padding: 64px 0; }
+    .on-light { background: var(--paper); color: var(--text-on-light); }
+    .on-light p { color: var(--text-on-light-2); }
+
+    .btn {
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 26px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform var(--ease), box-shadow var(--ease),
+        background var(--ease), border-color var(--ease);
     }
 
-    h1 {
-      font-size: clamp(3.25rem, 7vw, 6.8rem);
-      line-height: 0.94;
-      letter-spacing: -0.07em;
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--green-bright), var(--green));
+      color: #06130b;
+      box-shadow: 0 14px 38px rgba(24, 169, 87, 0.35);
+    }
+
+    .btn-primary:hover { box-shadow: 0 18px 48px rgba(24, 169, 87, 0.48); }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.28);
+      color: var(--text-on-dark);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--green-bright);
+      background: rgba(61, 220, 120, 0.08);
+    }
+
+    /* ============================================================
+       NAV — sticky and always visible, including at the very top of
+       the hero (issue #3). Full brand name spelled out next to the
+       mark so the wordmark is legible at a glance (issue #8).
+       ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(180deg, rgba(7, 19, 13, 0.97), rgba(7, 19, 13, 0.88));
+      border-bottom: 1px solid var(--line-dark);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand { display: inline-flex; align-items: center; gap: 14px; }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      flex: none;
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-name .primary {
+      font-size: 1.12rem;
       font-weight: 800;
-      max-width: 820px;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
     }
 
-    h2 {
-      font-size: clamp(2.2rem, 4.6vw, 4.8rem);
-      line-height: 0.98;
-      letter-spacing: -0.055em;
-      font-weight: 760;
-      max-width: 900px;
+    .brand-name .secondary {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-on-dark-3);
+      white-space: nowrap;
     }
 
-    h3 {
-      font-size: clamp(1.15rem, 1.6vw, 1.45rem);
-      line-height: 1.2;
-      font-weight: 680;
-      letter-spacing: -0.03em;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-on-dark-2);
     }
 
-    p {
-      color: var(--text-2);
-      font-size: 1.03rem;
-      line-height: 1.72;
-    }
+    .nav-links a { transition: color var(--ease); }
+    .nav-links a:hover { color: var(--green-bright); }
 
-    .muted {
-      color: var(--text-3);
-    }
-
-    .accent {
-      color: #ffffff;
-      text-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
-    }
-
-    .section {
+    /* ============================================================
+       HERO — full-width two-column layout. Copy on the left, a real
+       visual anchor (animated bio-network) on the right so no half of
+       the viewport is dead space (issue #1).
+       ============================================================ */
+    .hero {
       position: relative;
-      padding: 120px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 72px 0 84px;
+      min-height: calc(92vh - 80px);
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 78% 30%, rgba(24, 169, 87, 0.14), transparent 42%),
+        radial-gradient(circle at 12% 80%, rgba(24, 169, 87, 0.08), transparent 36%),
+        linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+      overflow: hidden;
     }
 
-    .section-tight {
-      padding: 90px 0;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 90%);
     }
 
-    .rule {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, var(--line-strong), transparent 85%);
-      margin: 18px 0 26px;
+    .hero-layout {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(380px, 0.98fr);
+      align-items: center;
+      gap: 56px;
+    }
+
+    .hero-topline {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--green-bright);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero-topline .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green-bright);
+      box-shadow: 0 0 14px var(--glow);
+    }
+
+    .hero h1 { margin-top: 20px; max-width: 640px; }
+    .hero h1 .accent { color: var(--green-bright); }
+
+    .hero .lead {
+      margin-top: 22px;
+      max-width: 560px;
+      font-size: 1.12rem;
+      color: var(--text-on-dark-2);
     }
 
     .button-row {
@@ -213,1420 +292,1263 @@
       margin-top: 34px;
     }
 
-    .btn {
-      min-height: 54px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 24px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 0.94rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      transition:
-        transform var(--ease),
-        border-color var(--ease),
-        background var(--ease),
-        box-shadow var(--ease);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, rgba(111, 127, 168, 0.92), rgba(73, 88, 121, 0.92));
-      border-color: rgba(111, 127, 168, 0.55);
-      box-shadow: 0 16px 44px rgba(73, 88, 121, 0.32);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      border-color: rgba(255, 255, 255, 0.3);
-      box-shadow: 0 20px 56px rgba(73, 88, 121, 0.42);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.025);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.055);
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: linear-gradient(180deg, rgba(5, 7, 12, 0.94), rgba(5, 7, 12, 0.78));
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-
-    .nav-inner {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 16px;
-      min-width: 0;
-    }
-
-    .brand-logo {
-      width: 116px;
-      height: auto;
-      object-fit: contain;
-      filter: brightness(1.02);
-    }
-
-    .brand-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .brand-kicker {
-      color: var(--text-4);
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      color: var(--text-3);
-      font-size: 0.9rem;
-    }
-
-    .nav-links a {
-      position: relative;
-      transition: color var(--ease);
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-    .hero {
-      position: relative;
-      padding: 82px 0 110px;
-      min-height: calc(100vh - 78px);
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
-      align-items: center;
-      gap: 48px;
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-copy p.lead {
-      max-width: 700px;
-      font-size: 1.12rem;
-      margin-top: 22px;
-      color: var(--text-2);
-    }
-
-    .hero-topline {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text-3);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    .hero-topline .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 16px var(--glow);
-    }
-
-    .hero-interface {
-      display: grid;
-      gap: 18px;
-      position: relative;
-    }
-
-    .ui-panel {
-      position: relative;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015)),
-        rgba(8, 12, 20, 0.78);
-      border-radius: 26px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .ui-panel::before,
-    .ui-panel::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      width: 12px;
-      height: 12px;
-      pointer-events: none;
-    }
-
-    .ui-panel::before {
-      top: 16px;
-      left: 16px;
-      border-right: 0;
-      border-bottom: 0;
-    }
-
-    .ui-panel::after {
-      right: 16px;
-      bottom: 16px;
-      border-left: 0;
-      border-top: 0;
-    }
-
-    .panel-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 14px 18px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .panel-title {
-      color: var(--text-3);
-      font-size: 0.76rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .panel-controls {
-      display: flex;
-      gap: 8px;
-    }
-
-    .panel-controls span {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.25);
-      display: inline-block;
-    }
-
-    .video-shell {
-      padding: 0;
-    }
-
-    .video-shell iframe {
-      aspect-ratio: 16 / 9;
-      min-height: 300px;
-      background: #000;
-    }
-
-    .micro-panels {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .micro-panel {
-      position: relative;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.015));
-      border-radius: 18px;
-      min-height: 158px;
-      overflow: hidden;
-      padding: 18px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .micro-panel h4 {
-      margin: 0 0 12px;
-      color: var(--text);
-      font-size: 0.92rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .micro-panel .table-lines {
-      display: grid;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .micro-panel .table-lines span {
-      display: block;
-      height: 9px;
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      background: rgba(255, 255, 255, 0.01);
-    }
-
-    .micro-panel .bars {
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-      height: 70px;
-      margin-top: 18px;
-    }
-
-    .micro-panel .bars span {
-      flex: 1;
-      background: linear-gradient(180deg, rgba(111, 127, 168, 0.9), rgba(111, 127, 168, 0.24));
-      border: 1px solid rgba(111, 127, 168, 0.36);
-      min-height: 14px;
-    }
-
-    .floating-orbit {
-      position: absolute;
-      left: -20px;
-      top: 90px;
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow:
-        0 0 0 18px rgba(255,255,255,0.015),
-        0 0 0 54px rgba(255,255,255,0.01),
-        0 0 42px rgba(111, 127, 168, 0.12);
-      opacity: 0.45;
-      filter: blur(0.2px);
-      pointer-events: none;
-    }
-
-    .floating-orbit::before {
-      content: "";
-      position: absolute;
-      inset: 38px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-      box-shadow: var(--shadow-soft);
-    }
-
-    .metric {
-      padding: 34px 28px;
-      min-height: 184px;
-      border-right: 1px solid rgba(255,255,255,0.07);
-      position: relative;
-    }
-
-    .metric:last-child {
-      border-right: 0;
-    }
-
-    .metric::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 28px;
-      right: 28px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-    }
-
-    .metric-number {
-      font-size: clamp(2.7rem, 4vw, 4rem);
-      line-height: 0.95;
-      letter-spacing: -0.065em;
-      font-weight: 800;
-      color: white;
-    }
-
-    .metric-label {
-      margin-top: 18px;
-      color: var(--text-3);
-      font-size: 0.97rem;
-      max-width: 220px;
-      line-height: 1.45;
-    }
-
-    .split-editorial {
-      display: grid;
-      grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
-      gap: 0;
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
-      box-shadow: var(--shadow);
-    }
-
-    .split-left,
-    .split-right {
-      padding: 54px 42px;
-      position: relative;
-      min-height: 520px;
-    }
-
-    .split-left {
-      border-right: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .split-left .issue-row {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      color: var(--text-3);
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .split-left .issue-row .divider {
-      width: 1px;
-      height: 24px;
-      background: rgba(255,255,255,0.14);
-    }
-
-    .split-left h2 {
-      max-width: 560px;
-      font-size: clamp(2.8rem, 5vw, 5.4rem);
-      line-height: 0.96;
-    }
-
-    .split-left .foot-meta {
+    .hero-proof {
       display: flex;
       flex-wrap: wrap;
-      gap: 22px;
-      color: var(--text-3);
-      font-size: 0.95rem;
+      gap: 24px;
+      margin-top: 38px;
+      color: var(--text-on-dark-3);
+      font-size: 0.86rem;
+      font-weight: 600;
     }
 
-    .split-right .label-line {
+    .hero-proof span { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-proof svg { width: 15px; height: 15px; stroke: var(--green); stroke-width: 2; fill: none; }
+
+    /* Hero visual — animated network of "cells" + helix rings */
+    .hero-visual {
+      position: relative;
+      min-height: 480px;
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 30% 25%, rgba(61, 220, 120, 0.1), transparent 38%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-visual svg.bio-net { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    .bio-net .link { stroke: rgba(61, 220, 120, 0.22); stroke-width: 1; }
+    .bio-net .node { fill: rgba(61, 220, 120, 0.85); }
+    .bio-net .node-halo {
+      fill: none;
+      stroke: rgba(61, 220, 120, 0.35);
+      animation: halo 3.2s ease-in-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+
+    @keyframes halo {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.35); }
+    }
+
+    .hero-chip {
+      position: absolute;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      color: var(--text-3);
-      font-size: 0.95rem;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line-dark);
+      background: rgba(7, 19, 13, 0.85);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.82rem;
+      font-weight: 700;
+      animation: drift 6s ease-in-out infinite;
+    }
+
+    .hero-chip .chip-num { color: var(--green-bright); font-size: 1.05rem; }
+    .hero-chip.chip-a { top: 9%; right: 7%; }
+    .hero-chip.chip-b { bottom: 26%; left: 6%; animation-delay: 1.6s; }
+    .hero-chip.chip-c { bottom: 8%; right: 11%; animation-delay: 3s; }
+
+    @keyframes drift {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
+    }
+
+    /* ============================================================
+       PARTNER TICKER — names paired with logo marks, not bare text
+       pills (issue #9).
+       ============================================================ */
+    .ticker-section {
+      padding: 34px 0;
+      border-top: 1px solid var(--line-dark);
+      border-bottom: 1px solid var(--line-dark);
+      background: var(--ink-2);
+      overflow: hidden;
+    }
+
+    .ticker-label {
+      text-align: center;
+      color: var(--text-on-dark-3);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
       margin-bottom: 22px;
     }
 
-    .split-right .diagram-box {
-      position: relative;
-      border: 1px solid rgba(255,255,255,0.12);
-      min-height: 280px;
-      margin-top: 22px;
-      background:
-        repeating-linear-gradient(
-          135deg,
-          rgba(255,255,255,0.03) 0,
-          rgba(255,255,255,0.03) 2px,
-          transparent 2px,
-          transparent 10px
-        );
-      overflow: hidden;
-    }
-
-    .scatter {
-      position: absolute;
-      inset: 26px auto auto 28px;
-      width: 180px;
-      height: 180px;
-    }
-
-    .scatter span,
-    .grid-chart span {
-      position: absolute;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.78);
-    }
-
-    .grid-chart {
-      position: absolute;
-      right: 26px;
-      bottom: 28px;
-      width: 210px;
-      height: 130px;
-      border: 1px solid rgba(255,255,255,0.24);
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      grid-template-rows: repeat(5, 1fr);
-    }
-
-    .grid-chart::before,
-    .grid-chart::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .grid-chart::before {
-      background-image:
-        linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px);
-      background-size: calc(100% / 7) calc(100% / 5);
-    }
-
-    .principles {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 34px;
-    }
-
-    .principle {
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,0.16);
-    }
-
-    .principle .num {
-      color: white;
-      font-size: 2rem;
-      letter-spacing: -0.05em;
-      margin-bottom: 8px;
-    }
-
-    .principle .title {
-      color: var(--text);
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 42px;
-    }
-
-    .card {
-      position: relative;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015)),
-        rgba(8, 12, 20, 0.78);
-      padding: 28px;
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 28px;
-      right: 28px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    }
-
-    .card h3 {
-      margin: 10px 0 14px;
-    }
-
-    .card ul {
-      list-style: none;
-      padding: 0;
-      margin: 16px 0 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .card li {
-      position: relative;
-      padding-left: 18px;
-      color: var(--text-2);
-      line-height: 1.6;
-    }
-
-    .card li::before {
-      content: "";
-      position: absolute;
-      top: 0.62em;
-      left: 0;
-      width: 7px;
-      height: 7px;
-      border: 1px solid rgba(255,255,255,0.38);
-      background: rgba(111, 127, 168, 0.25);
-    }
-
-    .icon-chip {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,0.03);
-    }
-
-    .icon-chip svg {
-      width: 22px;
-      height: 22px;
-      stroke: #ffffff;
-      stroke-width: 1.5;
-      fill: none;
-      opacity: 0.88;
-    }
-
-    .organizations {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 36px;
-    }
-
-    .org {
-      min-height: 132px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
+    .ticker-track {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      background: rgba(255,255,255,0.02);
-      color: var(--text-2);
-      font-size: 0.93rem;
-      line-height: 1.45;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .timeline-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 40px;
+      width: max-content;
+      animation: ticker 38s linear infinite;
     }
 
-    .timeline-card {
-      position: relative;
-      min-height: 280px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 28px 24px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015)),
-        rgba(8, 12, 20, 0.78);
-      box-shadow: var(--shadow-soft);
+    .ticker-track:hover { animation-play-state: paused; }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
-    .timeline-card .step {
-      width: 54px;
-      height: 54px;
+    .partner {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 22px 12px 14px;
+      border: 1px solid var(--line-dark);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--text-on-dark-2);
+    }
+
+    .partner-logo {
+      width: 34px;
+      height: 34px;
+      flex: none;
       border-radius: 50%;
-      border: 1px solid rgba(111,127,168,0.36);
-      background: linear-gradient(180deg, rgba(111,127,168,0.24), rgba(111,127,168,0.08));
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 0.72rem;
       font-weight: 800;
-      color: white;
-      box-shadow: 0 0 28px rgba(111, 127, 168, 0.18);
+      letter-spacing: 0.02em;
+      color: #06130b;
+      background: linear-gradient(135deg, var(--green-bright), var(--green));
+    }
+
+    /* ============================================================
+       STATS — count-up animation on scroll, icon + one-line insight
+       per stat so the numbers land like milestones (issue #6).
+       ============================================================ */
+    .stats { background: var(--ink-2); }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 44px;
+    }
+
+    .stat {
+      position: relative;
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+      box-shadow: var(--shadow-soft);
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .stat.in { opacity: 1; transform: translateY(0); }
+
+    .stat-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      border: 1px solid rgba(61, 220, 120, 0.35);
+      background: rgba(61, 220, 120, 0.1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 20px;
     }
 
-    .timeline-card p {
-      margin-top: 12px;
-    }
+    .stat-icon svg { width: 22px; height: 22px; stroke: var(--green-bright); stroke-width: 1.8; fill: none; }
 
-    .timeline-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 16px 0 0;
-      display: grid;
-      gap: 8px;
-    }
-
-    .timeline-card li {
-      color: var(--text-3);
-      font-size: 0.96rem;
-      line-height: 1.5;
-      padding-left: 16px;
-      position: relative;
-    }
-
-    .timeline-card li::before {
-      content: "·";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--accent);
+    .stat-number {
+      font-size: clamp(2.6rem, 4vw, 3.8rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
       font-weight: 800;
+      color: #ffffff;
     }
 
-    .award-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 36px;
-    }
+    .stat-number .unit { color: var(--green-bright); }
 
-    .award {
-      border: 1px solid var(--line);
-      border-left: 3px solid rgba(255,255,255,0.28);
-      border-radius: 18px;
-      padding: 24px 24px 24px 22px;
-      background: rgba(255,255,255,0.025);
-    }
-
-    .award h4 {
-      margin: 0 0 8px;
-      color: white;
-      font-size: 1.05rem;
+    .stat-label {
+      margin-top: 12px;
+      font-size: 1rem;
       font-weight: 700;
+      color: var(--text-on-dark);
     }
 
-    .cta-shell {
-      position: relative;
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(111,127,168,0.14), transparent 28%),
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-      padding: 56px 36px;
-      text-align: center;
-      box-shadow: var(--shadow);
+    .stat-insight {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text-on-dark-3);
+    }
+
+    /* ============================================================
+       PROGRAMS — horizontal-reading titles, a 1–2 line description,
+       and an explicit Learn More link on every card (issue #2).
+       ============================================================ */
+    .programs-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .programs-head p { max-width: 480px; }
+
+    /* Four full-width horizontal rows stacked vertically; each one
+       expands downward (accordion) to reveal its description. */
+    .program-stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 44px;
+    }
+
+    .program-row {
+      border-radius: var(--radius);
       overflow: hidden;
+      color: #ffffff;
+      box-shadow: var(--shadow-soft);
+      transition: box-shadow var(--ease), transform var(--ease);
     }
 
-    .cta-shell::before {
+    .program-row:hover { box-shadow: 0 20px 54px rgba(4, 12, 8, 0.22); }
+
+    .program-row.bio-train { background: linear-gradient(120deg, #0d3b66, #135380); }
+    .program-row.bio-launch { background: linear-gradient(120deg, #0d7a3d, #169c50); }
+    .program-row.bio-can { background: linear-gradient(120deg, #0f5e74, #198299); }
+    .program-row.bio-defense { background: linear-gradient(120deg, #131c33, #1f2e4f); }
+
+    .program-head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 24px 28px;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      text-align: left;
+      color: inherit;
+      font-family: inherit;
+    }
+
+    .program-chip {
+      flex: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .program-chip svg { width: 21px; height: 21px; stroke: #ffffff; stroke-width: 1.8; fill: none; }
+
+    .program-head h3 {
+      color: #ffffff;
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      letter-spacing: -0.02em;
+    }
+
+    .program-cat {
+      display: inline-flex;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      white-space: nowrap;
+    }
+
+    .program-toggle {
+      flex: none;
+      margin-left: auto;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 320ms cubic-bezier(0.2, 0, 0, 1), background var(--ease);
+    }
+
+    .program-toggle svg { width: 16px; height: 16px; stroke: #ffffff; stroke-width: 2.2; fill: none; }
+    .program-row.open .program-toggle { transform: rotate(45deg); background: rgba(255, 255, 255, 0.14); }
+
+    .program-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 420ms cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    .program-body > div { overflow: hidden; }
+    .program-row.open .program-body { grid-template-rows: 1fr; }
+
+    .program-detail {
+      padding: 2px 28px 28px 90px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .program-detail p {
+      max-width: 680px;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .program-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .program-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      transition: transform var(--ease);
+    }
+
+    .program-link:hover svg { transform: translateX(4px); }
+
+    /* ============================================================
+       TESTIMONIALS — real-stakeholder social proof block (issue #12).
+       ============================================================ */
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 44px;
+    }
+
+    .quote-card {
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      padding: 30px 28px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .quote-card .mark {
+      font-size: 2.6rem;
+      line-height: 1;
+      font-weight: 800;
+      color: var(--green-bright);
+    }
+
+    .quote-card blockquote {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color: var(--text-on-dark-2);
+    }
+
+    .quote-attr { margin-top: auto; display: flex; align-items: center; gap: 12px; }
+
+    .quote-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #06130b;
+      background: linear-gradient(135deg, var(--green-bright), var(--green));
+    }
+
+    .quote-attr .who { font-size: 0.92rem; font-weight: 700; }
+    .quote-attr .role { font-size: 0.8rem; color: var(--text-on-dark-3); }
+
+    /* ============================================================
+       NEWS — consistent card pattern; thumbnail, category tag,
+       headline, and date always visible (issue #7).
+       ============================================================ */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 44px;
+    }
+
+    .news-card {
+      border: 1px solid var(--line-light);
+      border-radius: var(--radius);
+      background: #ffffff;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-soft);
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 54px rgba(4, 12, 8, 0.18);
+    }
+
+    .news-thumb {
+      aspect-ratio: 16 / 10;
+      width: 100%;
+      position: relative;
+      flex: none;
+    }
+
+    .news-thumb-a { background: linear-gradient(135deg, #0d7a3d, #3ddc78 80%); }
+    .news-thumb-b { background: linear-gradient(135deg, #0b1b13, #18a957 90%); }
+    .news-thumb-c { background: linear-gradient(135deg, #134e2b, #7ce8a6 95%); }
+
+    .news-thumb::after {
       content: "";
       position: absolute;
-      left: -90px;
-      top: -90px;
-      width: 220px;
-      height: 220px;
-      border: 1px solid rgba(255,255,255,0.08);
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(135deg, rgba(0,0,0,0.65), transparent 70%);
+    }
+
+    .news-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .news-tag {
+      align-self: flex-start;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      background: rgba(24, 169, 87, 0.1);
+      border: 1px solid rgba(24, 169, 87, 0.25);
+    }
+
+    .news-body h3 { font-size: 1.12rem; color: var(--text-on-light); }
+    .news-date { margin-top: auto; font-size: 0.84rem; color: rgba(18, 32, 25, 0.5); font-weight: 600; }
+
+    /* ============================================================
+       NEWSLETTER — value bullets lead, and the form asks only for
+       email + organization (issue #10).
+       ============================================================ */
+    .newsletter {
+      background:
+        radial-gradient(circle at 18% 25%, rgba(61, 220, 120, 0.12), transparent 38%),
+        linear-gradient(180deg, var(--ink-2), var(--ink));
+    }
+
+    .newsletter-shell {
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      padding: 56px 48px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012));
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .value-list {
+      list-style: none;
+      margin: 26px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 16px;
+    }
+
+    .value-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-on-dark-2);
+      line-height: 1.5;
+    }
+
+    .value-list .check {
+      flex: none;
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
-      box-shadow: 0 0 0 36px rgba(255,255,255,0.015);
-      opacity: 0.6;
+      background: rgba(61, 220, 120, 0.14);
+      border: 1px solid rgba(61, 220, 120, 0.4);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
     }
 
-    .cta-shell::after {
-      content: "";
-      position: absolute;
-      right: -70px;
-      bottom: -70px;
-      width: 180px;
-      height: 180px;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 50%;
-      box-shadow: 0 0 0 28px rgba(255,255,255,0.015);
-      opacity: 0.4;
+    .value-list .check svg { width: 13px; height: 13px; stroke: var(--green-bright); stroke-width: 2.4; fill: none; }
+
+    .signup-form { display: grid; gap: 14px; }
+
+    .signup-form label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-on-dark-3);
     }
 
-    .cta-shell p {
-      max-width: 760px;
-      margin: 18px auto 0;
+    .signup-form input {
+      width: 100%;
+      min-height: 54px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line-dark);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-on-dark);
+      font-size: 1rem;
+      font-family: inherit;
+      padding: 0 18px;
+      outline: none;
+      transition: border-color var(--ease);
     }
 
+    .signup-form input:focus { border-color: var(--green-bright); }
+    .signup-form input::placeholder { color: var(--text-on-dark-3); }
+
+    .form-note { font-size: 0.84rem; color: var(--text-on-dark-3); }
+
+    /* ============================================================
+       FOOTER — logo rendered large and high-contrast, full tagline
+       shown without truncation (issue #11).
+       ============================================================ */
     footer {
-      padding: 34px 0 50px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      color: var(--text-4);
-      font-size: 0.88rem;
-      text-align: center;
+      padding: 72px 0 44px;
+      border-top: 1px solid var(--line-dark);
+      background: var(--ink);
     }
 
-    @media (max-width: 1180px) {
-      .hero-layout,
-      .split-editorial {
-        grid-template-columns: 1fr;
-      }
-
-      .split-left {
-        border-right: 0;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-        min-height: auto;
-      }
-
-      .metrics,
-      .organizations,
-      .timeline-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 0.7fr));
+      gap: 44px;
     }
 
-    @media (max-width: 900px) {
-      .container {
-        width: min(calc(100% - 32px), var(--container));
-      }
+    .footer-brand .brand-mark { width: 56px; height: 56px; }
 
-      .nav-inner {
-        min-height: 72px;
-      }
-
-      .brand {
-        gap: 12px;
-      }
-
-      .brand-logo {
-        width: 94px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding: 62px 0 80px;
-      }
-
-      .micro-panels,
-      .grid-2,
-      .principles,
-      .award-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .metrics,
-      .organizations,
-      .timeline-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .metric {
-        border-right: 0;
-        border-bottom: 1px solid rgba(255,255,255,0.07);
-      }
-
-      .metric:last-child {
-        border-bottom: 0;
-      }
-
-      .split-left,
-      .split-right,
-      .cta-shell {
-        padding: 38px 24px;
-      }
-
-      .floating-orbit {
-        display: none;
-      }
+    .footer-brand .name {
+      margin-top: 18px;
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
     }
 
-    @media (max-width: 560px) {
-      .hero-topline,
-      .eyebrow {
-        font-size: 0.7rem;
-      }
+    .footer-tagline {
+      margin-top: 14px;
+      max-width: 380px;
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: var(--text-on-dark-2);
+    }
 
-      .button-row {
-        flex-direction: column;
-      }
+    .footer-col h4 {
+      margin: 0 0 18px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-on-dark-3);
+    }
 
-      .btn {
-        width: 100%;
-      }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .footer-col a { font-size: 0.94rem; color: var(--text-on-dark-2); transition: color var(--ease); }
+    .footer-col a:hover { color: var(--green-bright); }
 
-      .panel-header {
-        padding: 12px 14px;
-      }
+    .footer-base {
+      margin-top: 56px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line-dark);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.84rem;
+      color: var(--text-on-dark-3);
+    }
 
-      .card,
-      .timeline-card,
-      .award,
-      .org {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+    /* Scroll-reveal helper */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 650ms ease, transform 650ms ease;
+    }
 
-      .section {
-        padding: 84px 0;
-      }
+    .reveal.in { opacity: 1; transform: translateY(0); }
 
-      .section-tight {
-        padding: 74px 0;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-track, .hero-chip, .bio-net .node-halo { animation: none; }
+      .reveal, .stat { opacity: 1; transform: none; transition: none; }
+      .program-body, .program-toggle { transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    @media (max-width: 1100px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 380px; }
+      .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .quote-grid, .news-grid { grid-template-columns: 1fr 1fr; }
+      .newsletter-shell { grid-template-columns: 1fr; padding: 44px 32px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(calc(100% - 32px), var(--container)); }
+      .nav-links { display: none; }
+      .brand-name .secondary { display: none; }
+      .section { padding: 64px 0; }
+      .section-tight { padding: 52px 0; }
+      .hero { padding: 56px 0 64px; min-height: 0; }
+      .stats-grid, .quote-grid, .news-grid { grid-template-columns: 1fr; }
+      .program-head { padding: 18px 20px; flex-wrap: wrap; }
+      .program-cat { order: 4; width: 100%; justify-self: start; align-self: flex-start; }
+      .program-detail { padding: 2px 20px 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .button-row { flex-direction: column; }
+      .btn { width: 100%; }
+      .hero-chip.chip-b { display: none; }
     }
   </style>
 </head>
 <body>
-  <div class="shell">
-    <nav class="nav">
-      <div class="container nav-inner">
-        <a href="#home" class="brand" aria-label="RAM Home">
-          <img
-            class="brand-logo"
-            src="https://static.wixstatic.com/media/fcced6_f19335b6f6ed433b9a5c9a2294f3db1a~mv2.png"
-            alt="RAM Powered by ARI logo"
-          />
-          <div class="brand-copy">
-            <span class="brand-kicker">Rapid Acquisition Model</span>
-            <span class="brand-kicker">Powered by Applied Research Institute</span>
-          </div>
-        </a>
 
-        <div class="nav-links">
-          <a href="#impact">Impact</a>
-          <a href="#model">Model</a>
-          <a href="#pathway">Pathway</a>
-          <a href="#recognition">Recognition</a>
-        </div>
+  <!-- NAV (issues #3, #8) -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="Heartland BioWorks home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M24 3l18 10.5v21L24 45 6 34.5v-21L24 3z" fill="none" stroke="#3ddc78" stroke-width="2.4" />
+          <path d="M24 14v20M16 19v10M32 19v10" stroke="#3ddc78" stroke-width="2.4" stroke-linecap="round" />
+        </svg>
+        <span class="brand-name">
+          <span class="primary">Heartland BioWorks</span>
+          <span class="secondary">Indiana's Regional Tech Hub</span>
+        </span>
+      </a>
 
-        <a
-          href="https://linktr.ee/AppliedResearchInstitute"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-secondary"
-        >
-          Explore RAM ↗
-        </a>
+      <div class="nav-links">
+        <a href="#programs">Programs</a>
+        <a href="#impact">Impact</a>
+        <a href="#voices">Voices</a>
+        <a href="#news">News</a>
       </div>
-    </nav>
 
-    <header class="hero" id="home">
-      <div class="container hero-layout">
-        <div class="hero-copy">
-          <div class="floating-orbit" aria-hidden="true"></div>
+      <a href="#newsletter" class="btn btn-primary">Partner With Us</a>
+    </div>
+  </nav>
 
-          <div class="hero-topline">
-            <span class="dot"></span>
-            <span>Operating model for acquisition velocity</span>
-          </div>
-
-          <div class="rule"></div>
-
-          <h1>
-            Rapid Acquisition
-            <span class="accent">Model for the modern mission</span>
-          </h1>
-
-          <p class="lead">
-            The Rapid Acquisition Model moves technology from initial engagement to awardable outcomes.
-            It gives government agencies a more direct, transparent, and accelerated way to identify,
-            evaluate, and acquire emerging capabilities across the Department of War.
-          </p>
-
-          <div class="button-row">
-            <a
-              href="https://linktr.ee/AppliedResearchInstitute"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-            >
-              Explore RAM in Action
-            </a>
-            <a href="#model" class="btn btn-secondary">See the model</a>
-          </div>
+  <!-- HERO (issues #1, #4) -->
+  <header class="hero" id="top">
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <div class="hero-topline">
+          <span class="dot"></span>
+          <span>Federally designated EDA Tech Hub</span>
         </div>
 
-        <div class="hero-interface">
-          <div class="ui-panel video-shell">
-            <div class="panel-header">
-              <div class="panel-title">Mission Brief | RAM Overview</div>
-              <div class="panel-controls" aria-hidden="true">
-                <span></span><span></span><span></span>
-              </div>
-            </div>
-            <iframe
-              src="https://www.youtube.com/embed/e688KErAKjA?rel=0"
-              title="Revolutionizing Defense: How ARI's RAM Speeds Technology Transition"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
+        <h1>
+          Building the future of
+          <span class="accent">American biomanufacturing</span>
+          in Indiana
+        </h1>
 
-          <div class="micro-panels">
-            <div class="micro-panel">
-              <h4>Transparent Evaluation</h4>
-              <div class="table-lines" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="bars" aria-hidden="true">
-                <span style="height:26%"></span>
-                <span style="height:38%"></span>
-                <span style="height:52%"></span>
-                <span style="height:71%"></span>
-                <span style="height:44%"></span>
-              </div>
-            </div>
+        <p class="lead">
+          Heartland BioWorks connects funding, hands-on training, and industry
+          partnerships to make Indiana the place where biotechnology gets made —
+          from workforce development to national security.
+        </p>
 
-            <div class="micro-panel">
-              <h4>Mission Data Signals</h4>
-              <div class="table-lines" aria-hidden="true">
-                <span style="width:90%"></span>
-                <span style="width:76%"></span>
-                <span style="width:84%"></span>
-                <span style="width:58%"></span>
-                <span style="width:66%"></span>
-              </div>
-              <div class="bars" aria-hidden="true">
-                <span style="height:18%"></span>
-                <span style="height:28%"></span>
-                <span style="height:63%"></span>
-                <span style="height:46%"></span>
-                <span style="height:80%"></span>
-              </div>
-            </div>
-          </div>
+        <div class="button-row">
+          <a href="#programs" class="btn btn-primary">
+            Explore Programs
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#newsletter" class="btn btn-outline">Partner With Us</a>
+        </div>
+
+        <div class="hero-proof">
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            $51M federal investment
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            40+ consortium partners
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            Statewide reach
+          </span>
         </div>
       </div>
-    </header>
 
-    <section class="section-tight" id="impact">
-      <div class="container">
-        <div class="eyebrow">Proven impact</div>
-        <div class="rule"></div>
+      <!-- Right-side visual anchor: animated bio-network (issue #1) -->
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="bio-net" viewBox="0 0 600 560" preserveAspectRatio="xMidYMid slice">
+          <g class="links">
+            <line class="link" x1="120" y1="120" x2="280" y2="190" />
+            <line class="link" x1="280" y1="190" x2="450" y2="110" />
+            <line class="link" x1="280" y1="190" x2="200" y2="330" />
+            <line class="link" x1="450" y1="110" x2="500" y2="270" />
+            <line class="link" x1="200" y1="330" x2="350" y2="300" />
+            <line class="link" x1="350" y1="300" x2="500" y2="270" />
+            <line class="link" x1="200" y1="330" x2="140" y2="460" />
+            <line class="link" x1="350" y1="300" x2="320" y2="450" />
+            <line class="link" x1="320" y1="450" x2="140" y2="460" />
+            <line class="link" x1="320" y1="450" x2="480" y2="430" />
+            <line class="link" x1="500" y1="270" x2="480" y2="430" />
+            <line class="link" x1="120" y1="120" x2="200" y2="330" />
+          </g>
+          <g class="nodes">
+            <circle class="node-halo" cx="120" cy="120" r="14" />
+            <circle class="node" cx="120" cy="120" r="6" />
+            <circle class="node-halo" cx="280" cy="190" r="18" style="animation-delay: 0.6s" />
+            <circle class="node" cx="280" cy="190" r="8" />
+            <circle class="node-halo" cx="450" cy="110" r="12" style="animation-delay: 1.2s" />
+            <circle class="node" cx="450" cy="110" r="5" />
+            <circle class="node-halo" cx="200" cy="330" r="16" style="animation-delay: 1.8s" />
+            <circle class="node" cx="200" cy="330" r="7" />
+            <circle class="node-halo" cx="350" cy="300" r="20" style="animation-delay: 0.3s" />
+            <circle class="node" cx="350" cy="300" r="9" />
+            <circle class="node-halo" cx="500" cy="270" r="13" style="animation-delay: 2.2s" />
+            <circle class="node" cx="500" cy="270" r="6" />
+            <circle class="node-halo" cx="140" cy="460" r="14" style="animation-delay: 1s" />
+            <circle class="node" cx="140" cy="460" r="6" />
+            <circle class="node-halo" cx="320" cy="450" r="17" style="animation-delay: 2.6s" />
+            <circle class="node" cx="320" cy="450" r="8" />
+            <circle class="node-halo" cx="480" cy="430" r="12" style="animation-delay: 1.5s" />
+            <circle class="node" cx="480" cy="430" r="5" />
+          </g>
+        </svg>
 
-        <h2>
-          A data-driven acquisition model already
-          <span class="accent">delivering outcomes</span>
-        </h2>
-
-        <div class="metrics" style="margin-top:40px;">
-          <div class="metric">
-            <div class="metric-number">$3B+</div>
-            <div class="metric-label">in contracts awarded</div>
-          </div>
-          <div class="metric">
-            <div class="metric-number">150+</div>
-            <div class="metric-label">government activities participating</div>
-          </div>
-          <div class="metric">
-            <div class="metric-number">300%</div>
-            <div class="metric-label">faster to award</div>
-          </div>
-          <div class="metric">
-            <div class="metric-number">85%</div>
-            <div class="metric-label">non-traditional vendor participation</div>
-          </div>
+        <div class="hero-chip chip-a">
+          <span class="chip-num">#1</span>
+          <span>Pharma exports state</span>
+        </div>
+        <div class="hero-chip chip-b">
+          <span class="chip-num">$51M</span>
+          <span>Federal Tech Hubs award</span>
+        </div>
+        <div class="hero-chip chip-c">
+          <span class="chip-num">31</span>
+          <span>Regional Tech Hubs nationwide</span>
         </div>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <section class="section" id="model">
-      <div class="container">
-        <div class="split-editorial">
-          <div class="split-left">
+  <!-- PARTNER TICKER (issue #9) -->
+  <section class="ticker-section" aria-label="Partner organizations">
+    <div class="ticker-label">Indiana's Innovation Ecosystem</div>
+    <div class="ticker-track" id="tickerTrack">
+      <span class="partner"><span class="partner-logo">IN</span>Indiana Economic Development Corporation</span>
+      <span class="partner"><span class="partner-logo">ARI</span>Applied Research Institute</span>
+      <span class="partner"><span class="partner-logo">PU</span>Purdue University</span>
+      <span class="partner"><span class="partner-logo">IU</span>Indiana University</span>
+      <span class="partner"><span class="partner-logo">IVY</span>Ivy Tech Community College</span>
+      <span class="partner"><span class="partner-logo">BC</span>BioCrossroads</span>
+      <span class="partner"><span class="partner-logo">EDA</span>U.S. Economic Development Administration</span>
+      <span class="partner"><span class="partner-logo">CIC</span>Central Indiana Corporate Partnership</span>
+    </div>
+  </section>
+
+  <!-- STATS (issue #6) -->
+  <section class="section stats" id="impact">
+    <div class="container">
+      <div class="eyebrow" style="color: var(--green-bright);">By the numbers</div>
+      <h2 style="margin-top: 18px; max-width: 760px;">
+        Indiana isn't entering the bioeconomy. It's already leading it.
+      </h2>
+
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 6.6L21 9.2l-5 4.4 1.5 6.8L12 16.9 6.5 20.4 8 13.6 3 9.2l6.4-.6L12 2z"/></svg>
+          </div>
+          <div class="stat-number"><span class="unit">#</span><span class="count" data-count="1">0</span></div>
+          <div class="stat-label">Pharmaceutical exports state</div>
+          <div class="stat-insight">Indiana ships more pharmaceutical products than any other U.S. state.</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 16l4-6 4 3 4-8"/></svg>
+          </div>
+          <div class="stat-number">Top <span class="count" data-count="3">0</span></div>
+          <div class="stat-label">Life science export state</div>
+          <div class="stat-insight">A top-three exporter across the full life sciences portfolio.</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>
+          </div>
+          <div class="stat-number"><span class="count" data-count="31">0</span></div>
+          <div class="stat-label">Regional Tech Hubs nationwide</div>
+          <div class="stat-insight">Heartland BioWorks is one of just 31 federally designated hubs.</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 6.5c0-2-2.2-3-5-3s-5 1-5 3 2 2.8 5 3.5 5 1.5 5 3.5-2.2 3-5 3-5-1-5-3"/></svg>
+          </div>
+          <div class="stat-number"><span class="unit">$</span><span class="count" data-count="51">0</span>M</div>
+          <div class="stat-label">Federal Tech Hubs investment</div>
+          <div class="stat-insight">EDA implementation funding powering workforce and industry growth.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS (issues #2, #5) -->
+  <section class="section on-light" id="programs">
+    <div class="container">
+      <div class="programs-head reveal">
+        <div>
+          <div class="eyebrow" style="color: var(--green-deep);">Explore the Ecosystem</div>
+          <h2 style="margin-top: 18px;">Four Programs. One Mission.</h2>
+        </div>
+        <p>
+          Indiana's integrated biomanufacturing infrastructure — from workforce
+          development to national defense.
+        </p>
+      </div>
+
+      <div class="program-stack reveal" id="programStack">
+        <div class="program-row bio-train open">
+          <button class="program-head" type="button" aria-expanded="true" aria-controls="program-biotrain">
+            <span class="program-chip" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M5 11v5c0 1.5 3 3.5 7 3.5s7-2 7-3.5v-5"/></svg>
+            </span>
+            <h3>BioTrain</h3>
+            <span class="program-cat">Workforce</span>
+            <span class="program-toggle" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="program-body" id="program-biotrain">
             <div>
-              <div class="issue-row">
-                <span>RAM briefing</span>
-                <span class="divider"></span>
-                <span>Issue no. 7</span>
-              </div>
-
-              <h2>
-                RAM is accelerating acquisition,
-                not adding friction.
-              </h2>
-            </div>
-
-            <div class="foot-meta">
-              <span>Competition</span>
-              <span>Transparency</span>
-              <span>Faster transition</span>
-            </div>
-          </div>
-
-          <div class="split-right">
-            <div class="label-line">
-              <span>Specific operational value</span>
-              <span class="muted">Data-driven decision environment</span>
-            </div>
-
-            <div class="diagram-box">
-              <div class="scatter" aria-hidden="true">
-                <span style="left:8%; top:54%"></span>
-                <span style="left:18%; top:36%"></span>
-                <span style="left:24%; top:67%"></span>
-                <span style="left:33%; top:24%"></span>
-                <span style="left:41%; top:48%"></span>
-                <span style="left:47%; top:15%"></span>
-                <span style="left:56%; top:58%"></span>
-                <span style="left:61%; top:31%"></span>
-                <span style="left:73%; top:44%"></span>
-                <span style="left:80%; top:22%"></span>
-                <span style="left:86%; top:63%"></span>
-              </div>
-
-              <div class="grid-chart" aria-hidden="true"></div>
-            </div>
-
-            <div class="principles">
-              <div class="principle">
-                <div class="num">01</div>
-                <div class="title">Software-enabled process</div>
-                <p>One environment for competition, evaluation, and award.</p>
-              </div>
-              <div class="principle">
-                <div class="num">02</div>
-                <div class="title">Privacy and trust</div>
-                <p>Criteria-based assessment with transparent workflows.</p>
-              </div>
-              <div class="principle">
-                <div class="num">03</div>
-                <div class="title">Operational delivery</div>
-                <p>Faster pathways from identification to awardable status.</p>
+              <div class="program-detail">
+                <p>
+                  Hands-on training, credentialing, and job placement that move
+                  Hoosiers into biomanufacturing careers — no four-year degree
+                  required.
+                </p>
+                <a href="#" class="program-link">
+                  Learn more
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="grid-2" style="margin-top:28px;">
-          <div class="card">
-            <div class="icon-chip" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-                <path d="M8 8h8M8 12h8M8 16h5"></path>
-              </svg>
+        <div class="program-row bio-launch">
+          <button class="program-head" type="button" aria-expanded="false" aria-controls="program-biolaunch">
+            <span class="program-chip" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+            </span>
+            <h3>BioLaunch</h3>
+            <span class="program-cat">Commercialization</span>
+            <span class="program-toggle" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="program-body" id="program-biolaunch">
+            <div>
+              <div class="program-detail">
+                <p>
+                  Commercialization support, pilot-scale resources, and expert
+                  guidance that help innovators take bioproducts from lab bench
+                  to market.
+                </p>
+                <a href="#" class="program-link">
+                  Learn more
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
             </div>
-            <h3>What RAM Does</h3>
-            <p>
-              RAM demonstrates how competition, evaluation, and award can occur in one transparent,
-              data-driven environment that delivers capabilities to the field faster. It brings together
-              commercial-first access, measurable performance, and accelerated delivery into a single model.
-            </p>
           </div>
+        </div>
 
-          <div class="card">
-            <div class="icon-chip" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M5 19l14-14"></path>
-                <path d="M7 7h10v10"></path>
-              </svg>
+        <div class="program-row bio-can">
+          <button class="program-head" type="button" aria-expanded="false" aria-controls="program-biocan">
+            <span class="program-chip" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            </span>
+            <h3>BioCAN</h3>
+            <span class="program-cat">CDMO &amp; Funding</span>
+            <span class="program-toggle" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="program-body" id="program-biocan">
+            <div>
+              <div class="program-detail">
+                <p>
+                  Contract development, manufacturing capacity, and capital
+                  access that give companies the resources and funding to scale
+                  production in Indiana.
+                </p>
+                <a href="#" class="program-link">
+                  Learn more
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
             </div>
-            <h3>A Different Starting Point</h3>
-            <p>
-              Through concise, video-based submissions, innovators present five to seven minute solution
-              pitches reviewed against published evaluation criteria. Competition, evaluation, and award
-              happen within the same digital environment, replacing lengthy paperwork cycles with a more
-              direct and transparent process.
-            </p>
+          </div>
+        </div>
+
+        <div class="program-row bio-defense">
+          <button class="program-head" type="button" aria-expanded="false" aria-controls="program-biodefense">
+            <span class="program-chip" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg>
+            </span>
+            <h3>BioDefense</h3>
+            <span class="program-cat">National Security</span>
+            <span class="program-toggle" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+          <div class="program-body" id="program-biodefense">
+            <div>
+              <div class="program-detail">
+                <p>
+                  Strengthening domestic production of critical medicines and
+                  countermeasures to secure America's biomanufacturing supply
+                  chain.
+                </p>
+                <a href="#" class="program-link">
+                  Learn more
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="organizations">
-      <div class="container">
-        <div class="eyebrow">Applied across government</div>
-        <div class="rule"></div>
+  <!-- TESTIMONIALS (issue #12) -->
+  <!-- NOTE: swap these placeholder attributions for real named quotes
+       (e.g., a BARDA official, Purdue faculty, or member-company CEO)
+       before launch — named stakeholders carry far more weight. -->
+  <section class="section" id="voices" style="background: var(--ink-2);">
+    <div class="container">
+      <div class="eyebrow reveal" style="color: var(--green-bright);">Voices from the network</div>
+      <h2 class="reveal" style="margin-top: 18px; max-width: 720px;">
+        Trusted by the people building Indiana's bioeconomy
+      </h2>
 
-        <h2>
-          RAM is scalable across missions,
-          <span class="accent">operational domains, and critical technology areas.</span>
-        </h2>
-
-        <div class="organizations">
-          <div class="org">Defense Advanced Research Projects Agency</div>
-          <div class="org">Chief Digital and Artificial Intelligence Office</div>
-          <div class="org">Army Applications Laboratory</div>
-          <div class="org">Department of the Air Force</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="audiences">
-      <div class="container">
-        <div class="eyebrow">Powering government and innovators</div>
-        <div class="rule"></div>
-
-        <h2>
-          One model. Two high-value outcomes.
-        </h2>
-
-        <div class="grid-2">
-          <div class="card">
-            <div class="icon-chip" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 3v18"></path>
-                <path d="M3 12h18"></path>
-                <circle cx="12" cy="12" r="8"></circle>
-              </svg>
-            </div>
-            <h3>For Government</h3>
-            <ul>
-              <li>Mission-speed acquisition</li>
-              <li>Higher fidelity, lower burden assessments</li>
-              <li>Transparent, data-driven decisions</li>
-              <li>Broader access to the innovation base</li>
-              <li>Proven transition pathways</li>
-              <li>Reduced administrative burden</li>
-              <li>Alignment with Secretary of War acquisition priorities</li>
-            </ul>
+      <div class="quote-grid">
+        <div class="quote-card reveal">
+          <span class="mark">&ldquo;</span>
+          <blockquote>
+            BioTrain gave us a pipeline of job-ready technicians we simply could
+            not find before. We hired our first cohort within weeks of their
+            certification.
+          </blockquote>
+          <div class="quote-attr">
+            <span class="quote-avatar">DM</span>
+            <span>
+              <span class="who">Director of Manufacturing</span><br />
+              <span class="role">Indianapolis-based biopharma producer</span>
+            </span>
           </div>
+        </div>
 
-          <div class="card">
-            <div class="icon-chip" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M4 12h16"></path>
-                <path d="M12 4l8 8-8 8"></path>
-              </svg>
-            </div>
-            <h3>For Vendors</h3>
-            <ul>
-              <li>Clear, predictable, fair process</li>
-              <li>Lower barrier to entry</li>
-              <li>Increased visibility to DoW buyers</li>
-              <li>Direct pathways to funding</li>
-              <li>Actionable feedback</li>
-              <li>Awardable status credibility</li>
-              <li>A single digital gateway to engage with the Department</li>
-            </ul>
+        <div class="quote-card reveal">
+          <span class="mark">&ldquo;</span>
+          <blockquote>
+            The hub model works because it connects research, industry, and
+            workforce in one system. Indiana is showing the rest of the country
+            how it's done.
+          </blockquote>
+          <div class="quote-attr">
+            <span class="quote-avatar">PR</span>
+            <span>
+              <span class="who">Professor of Biological Engineering</span><br />
+              <span class="role">Purdue University partner faculty</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="quote-card reveal">
+          <span class="mark">&ldquo;</span>
+          <blockquote>
+            As a startup, BioLaunch's scale-up support was the difference
+            between manufacturing here in Indiana and moving out of state.
+          </blockquote>
+          <div class="quote-attr">
+            <span class="quote-avatar">CE</span>
+            <span>
+              <span class="who">Chief Executive Officer</span><br />
+              <span class="role">Heartland BioWorks member company</span>
+            </span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="why">
-      <div class="container">
-        <div class="eyebrow">Why RAM matters</div>
-        <div class="rule"></div>
-
-        <h2>
-          Government is operating in an environment that demands
-          <span class="accent">faster delivery, broader innovation access, and more adaptable acquisition.</span>
-        </h2>
-
-        <div class="grid-2">
-          <div class="card">
-            <div class="icon-chip" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M5 19l14-14"></path>
-                <path d="M14 5h5v5"></path>
-              </svg>
-            </div>
-            <h3>Technology to the Field</h3>
-            <p>Increasing flexibility and maturity in delivering technology to the field.</p>
-          </div>
-
-          <div class="card">
-            <div class="icon-chip" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M4 8h16"></path>
-                <path d="M4 12h16"></path>
-                <path d="M4 16h16"></path>
-              </svg>
-            </div>
-            <h3>Capability Portfolios</h3>
-            <p>Enabling acquisition approaches that support portfolios of capabilities.</p>
-          </div>
-
-          <div class="card">
-            <div class="icon-chip" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <circle cx="6" cy="12" r="2"></circle>
-                <circle cx="12" cy="6" r="2"></circle>
-                <circle cx="18" cy="12" r="2"></circle>
-                <circle cx="12" cy="18" r="2"></circle>
-                <path d="M7.5 10.8l3-3M13.5 7.2l3 3M16.5 13.2l-3 3M10.5 16.2l-3-3"></path>
-              </svg>
-            </div>
-            <h3>Industrial Base Expansion</h3>
-            <p>Broadening opportunities for new entrants and expanding the defense industrial base.</p>
-          </div>
-
-          <div class="card">
-            <div class="icon-chip" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M4 19h16"></path>
-                <path d="M7 15l3-3 3 2 4-5"></path>
-              </svg>
-            </div>
-            <h3>Modern Acquisition</h3>
-            <p>Advancing innovative program management and acquisition approaches.</p>
-          </div>
+  <!-- NEWS (issue #7) -->
+  <section class="section on-light" id="news">
+    <div class="container">
+      <div class="programs-head reveal">
+        <div>
+          <div class="eyebrow" style="color: var(--green-deep);">Latest news</div>
+          <h2 style="margin-top: 18px;">What's happening at the hub</h2>
         </div>
+        <a href="#" class="btn btn-outline" style="border-color: var(--line-light); color: var(--text-on-light);">View all news</a>
       </div>
-    </section>
 
-    <section class="section" id="pathway">
-      <div class="container">
-        <div class="eyebrow">How RAM works</div>
-        <div class="rule"></div>
-
-        <h2>
-          A continuous pathway from
-          <span class="accent">engagement to award</span>
-        </h2>
-
-        <div class="timeline-grid">
-          <div class="timeline-card">
-            <div class="step">1</div>
-            <h3>Engagement and Access</h3>
-            <p>
-              Programs like DARPAConnect and SciTechCONNECT expand access and help identify alignment early.
-            </p>
+      <div class="news-grid">
+        <a href="#" class="news-card reveal">
+          <div class="news-thumb news-thumb-a"></div>
+          <div class="news-body">
+            <span class="news-tag">Funding</span>
+            <h3>Heartland BioWorks awarded $51M federal Tech Hubs implementation grant</h3>
+            <span class="news-date">July 2, 2024</span>
           </div>
+        </a>
 
-          <div class="timeline-card">
-            <div class="step">2</div>
-            <h3>Capability Alignment</h3>
-            <ul>
-              <li>Align solutions to mission needs</li>
-              <li>Connect with the right offices</li>
-              <li>Refine positioning through engagement</li>
-            </ul>
+        <a href="#" class="news-card reveal">
+          <div class="news-thumb news-thumb-b"></div>
+          <div class="news-body">
+            <span class="news-tag">Workforce</span>
+            <h3>BioTrain opens enrollment for hands-on biomanufacturing training cohorts</h3>
+            <span class="news-date">May 14, 2026</span>
           </div>
+        </a>
 
-          <div class="timeline-card">
-            <div class="step">3</div>
-            <h3>Solution Presentation</h3>
-            <ul>
-              <li>5 to 7 minute video submissions</li>
-              <li>Structured technical framing</li>
-              <li>SME-informed assessment</li>
-            </ul>
+        <a href="#" class="news-card reveal">
+          <div class="news-thumb news-thumb-c"></div>
+          <div class="news-body">
+            <span class="news-tag">Partnerships</span>
+            <h3>New industry partners join Indiana's biomanufacturing consortium</h3>
+            <span class="news-date">April 28, 2026</span>
           </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-          <div class="timeline-card">
-            <div class="step">4</div>
-            <h3>Marketplace + Award</h3>
-            <ul>
-              <li>Tradewinds Solutions Marketplace</li>
-              <li>DARPA ERIS Marketplace</li>
-              <li>Platform One Marketplace</li>
-              <li>Discovery, engagement, and award using existing authorities</li>
-            </ul>
-          </div>
+  <!-- NEWSLETTER (issue #10) -->
+  <section class="section newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-shell reveal">
+        <div>
+          <div class="eyebrow" style="color: var(--green-bright);">Stay in the loop</div>
+          <h2 style="margin-top: 16px;">Funding alerts. Event invites. Industry intel.</h2>
+          <ul class="value-list">
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+              Be first to hear about new funding and grant announcements
+            </li>
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+              Invitations to hub events, trainings, and convenings
+            </li>
+            <li>
+              <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+              Monthly digest of Indiana bioeconomy news that matters
+            </li>
+          </ul>
         </div>
+
+        <form class="signup-form" action="#" method="post">
+          <div>
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email" style="margin-top: 8px;" />
+          </div>
+          <div>
+            <label for="org">Organization <span style="text-transform: none; letter-spacing: 0; font-weight: 500;">(optional)</span></label>
+            <input type="text" id="org" name="organization" placeholder="Your company or institution" autocomplete="organization" style="margin-top: 8px;" />
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top: 6px;">Subscribe</button>
+          <span class="form-note">Just your email to start — we'll ask for the rest later. Unsubscribe anytime.</span>
+        </form>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="delivering">
-      <div class="container">
-        <div class="eyebrow">What RAM is delivering</div>
-        <div class="rule"></div>
-
-        <h2>
-          Reduced friction, improved visibility,
-          and <span class="accent">faster transition to awardable outcomes.</span>
-        </h2>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>Reduced Friction at the Front End</h3>
-            <p>RAM lowers the administrative burden of early-stage acquisition and simplifies the pathway from initial engagement to decision.</p>
-          </div>
-
-          <div class="card">
-            <h3>Improved Capability Visibility</h3>
-            <p>Government buyers gain stronger visibility into relevant capabilities and measurable performance in a structured environment.</p>
-          </div>
-
-          <div class="card">
-            <h3>Shortened Timelines</h3>
-            <p>Identification, evaluation, and acquisition decisions move faster without sacrificing rigor or fairness.</p>
-          </div>
-
-          <div class="card">
-            <h3>Expanded Non-Traditional Access</h3>
-            <p>RAM broadens participation and creates more direct entry points for commercial and non-traditional performers.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="recognition">
-      <div class="container">
-        <div class="eyebrow">Recognition</div>
-        <div class="rule"></div>
-
-        <h2>
-          External validation for
-          <span class="accent">operational impact and innovation.</span>
-        </h2>
-
-        <div class="award-grid">
-          <div class="award">
-            <h4>Gov Forum Impact Award</h4>
-            <p>Disruptive Program of the Year | ARI RAM</p>
-          </div>
-
-          <div class="award">
-            <h4>2025 Forum Innovation Award</h4>
-            <p>DARPAConnect &amp; ERIS Marketplace</p>
-          </div>
-
-          <div class="award">
-            <h4>2026 Forum Innovation Award</h4>
-            <p>DARPAConnect &amp; ERIS Marketplace and SciTechCONNECT</p>
-          </div>
-
-          <div class="award">
-            <h4>2025 IT100</h4>
-            <p>Jason Preisser and Jess Resig</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="final-cta">
-      <div class="container">
-        <div class="cta-shell">
-          <div class="eyebrow" style="justify-content:center;">RAM in action</div>
-          <h2 style="margin:18px auto 0;">
-            RAM is already in use across the Department to move capability faster, broaden participation, and deliver outcomes.
-          </h2>
-          <p>
-            Explore the broader RAM ecosystem and see how programs, platforms, and pathways are connecting mission needs with real acquisition velocity.
+  <!-- FOOTER (issue #11) -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 3l18 10.5v21L24 45 6 34.5v-21L24 3z" fill="none" stroke="#3ddc78" stroke-width="2.4" />
+            <path d="M24 14v20M16 19v10M32 19v10" stroke="#3ddc78" stroke-width="2.4" stroke-linecap="round" />
+          </svg>
+          <div class="name">Heartland BioWorks</div>
+          <p class="footer-tagline">
+            Indiana's Regional Tech Hub powering the future of biomanufacturing
+            — from workforce development to national security.
           </p>
+        </div>
 
-          <div class="button-row" style="justify-content:center;">
-            <a
-              href="https://linktr.ee/AppliedResearchInstitute"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-            >
-              Explore All RAM Programs
-            </a>
-          </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="#programs">BioTrain</a></li>
+            <li><a href="#programs">BioLaunch</a></li>
+            <li><a href="#programs">BioCAN</a></li>
+            <li><a href="#programs">BioDefense</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#voices">Our network</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#newsletter">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="#" rel="noopener noreferrer">X / Twitter</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <footer>
-      <div class="container">
-        © 2026 Rapid Acquisition Model. Powered by Applied Research Institute.
+      <div class="footer-base">
+        <span>© 2026 Heartland BioWorks. All rights reserved.</span>
+        <span>An EDA-designated Regional Technology and Innovation Hub</span>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   <script>
     (function () {
+      // Duplicate the ticker content so the marquee loops seamlessly.
+      var track = document.getElementById("tickerTrack");
+      if (track) {
+        track.innerHTML += track.innerHTML;
+      }
+
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // Program accordion: one row open at a time, expanding downward.
+      var stack = document.getElementById("programStack");
+      if (stack) {
+        var rows = stack.querySelectorAll(".program-row");
+        rows.forEach(function (row) {
+          row.querySelector(".program-head").addEventListener("click", function () {
+            var isOpen = row.classList.contains("open");
+            rows.forEach(function (other) {
+              other.classList.remove("open");
+              other.querySelector(".program-head").setAttribute("aria-expanded", "false");
+            });
+            if (!isOpen) {
+              row.classList.add("open");
+              row.querySelector(".program-head").setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+      }
+
+      // Count-up animation for stat numbers (issue #6).
+      function animateCount(el) {
+        var target = parseInt(el.getAttribute("data-count"), 10);
+        if (reduceMotion || !("requestAnimationFrame" in window)) {
+          el.textContent = target;
+          return;
+        }
+        var duration = 1400;
+        var start = null;
+        function tick(ts) {
+          if (start === null) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target);
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      if ("IntersectionObserver" in window) {
+        var statObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("in");
+            entry.target.querySelectorAll(".count").forEach(animateCount);
+            statObserver.unobserve(entry.target);
+          });
+        }, { threshold: 0.35 });
+
+        document.querySelectorAll(".stat").forEach(function (el, i) {
+          el.style.transitionDelay = (i * 90) + "ms";
+          statObserver.observe(el);
+        });
+
+        var revealObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("in");
+            revealObserver.unobserve(entry.target);
+          });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll(".reveal").forEach(function (el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        document.querySelectorAll(".stat, .reveal").forEach(function (el) {
+          el.classList.add("in");
+        });
+        document.querySelectorAll(".count").forEach(function (el) {
+          el.textContent = el.getAttribute("data-count");
+        });
+      }
+
+      // Report height to the Wix parent frame so the HTML embed resizes.
       function postHeight() {
         var height = Math.max(
           document.body.scrollHeight,
@@ -1634,26 +1556,15 @@
           document.body.offsetHeight,
           document.documentElement.offsetHeight
         );
-
-        window.parent.postMessage(
-          {
-            type: "resize",
-            height: height
-          },
-          "*"
-        );
+        window.parent.postMessage({ type: "resize", height: height }, "*");
       }
 
       if ("ResizeObserver" in window) {
-        var observer = new ResizeObserver(function () {
-          postHeight();
-        });
-        observer.observe(document.body);
+        new ResizeObserver(postHeight).observe(document.body);
       }
 
       window.addEventListener("load", postHeight);
       window.addEventListener("resize", postHeight);
-
       setTimeout(postHeight, 250);
       setTimeout(postHeight, 800);
       setTimeout(postHeight, 1500);
